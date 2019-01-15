@@ -47,13 +47,13 @@
             this._trialDetailsListView = new System.Windows.Forms.ListView();
             this._trialParametersGroup = new System.Windows.Forms.GroupBox();
             this._dynamicParametersPanel = new System.Windows.Forms.Panel();
-            this._handRewardsgroupBox = new System.Windows.Forms.GroupBox();
-            this._rightHandRewardCheckBox = new System.Windows.Forms.CheckBox();
-            this._centerHandRewardCheckBox = new System.Windows.Forms.CheckBox();
-            this._leftHandRewardCheckBox = new System.Windows.Forms.CheckBox();
-            this._digitalHandRewardButton = new System.Windows.Forms.Button();
-            this._continiousHandRewardButton = new System.Windows.Forms.Button();
-            this._checkBoxAutoChoice = new System.Windows.Forms.CheckBox();
+            //this._handRewardsgroupBox = new System.Windows.Forms.GroupBox();
+            //this._rightHandRewardCheckBox = new System.Windows.Forms.CheckBox();
+            //this._centerHandRewardCheckBox = new System.Windows.Forms.CheckBox();
+            //this._leftHandRewardCheckBox = new System.Windows.Forms.CheckBox();
+            //this._digitalHandRewardButton = new System.Windows.Forms.Button();
+            //this._continiousHandRewardButton = new System.Windows.Forms.Button();
+            //this._checkBoxAutoChoice = new System.Windows.Forms.CheckBox();
             this._varyingControlGroupBox = new System.Windows.Forms.GroupBox();
             this._btnMoveRobotSide = new System.Windows.Forms.Button();
             this._btnEnagae = new System.Windows.Forms.Button();
@@ -64,20 +64,20 @@
             this._labelStickOnNumber = new System.Windows.Forms.Label();
             this._numOfRepetitionsTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this._interactiveNolduscommuncation = new System.Windows.Forms.GroupBox();
+            //this._interactiveNolduscommuncation = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this._rightNoldusCommunicationRadioButton = new System.Windows.Forms.RadioButton();
+            //this._rightNoldusCommunicationRadioButton = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this._centerNoldusCommunicationRadioButton = new System.Windows.Forms.RadioButton();
+            //this._centerNoldusCommunicationRadioButton = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this._leftNoldusCommunicationRadioButton = new System.Windows.Forms.RadioButton();
-            this._drinkControlGroupBox = new System.Windows.Forms.GroupBox();
+            //this._leftNoldusCommunicationRadioButton = new System.Windows.Forms.RadioButton();
+            //this._drinkControlGroupBox = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this._selectedRatGroupBox = new System.Windows.Forms.GroupBox();
-            this._comboBoxStudentName = new System.Windows.Forms.ComboBox();
-            this._comboBoxSelectedRatName = new System.Windows.Forms.ComboBox();
+            //this._selectedRatGroupBox = new System.Windows.Forms.GroupBox();
+            //this._comboBoxStudentName = new System.Windows.Forms.ComboBox();
+            //this._comboBoxSelectedRatName = new System.Windows.Forms.ComboBox();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             this._guiInterfaceToolTip = new System.Windows.Forms.ToolTip(this.components);
             this._trialInfoGroupBox = new System.Windows.Forms.GroupBox();
@@ -85,61 +85,61 @@
             this._globaExperimentlInfoListView = new System.Windows.Forms.ListView();
             this._onlinePsychGrpahGroupBox = new System.Windows.Forms.GroupBox();
             this._onlinePsychGraphControl = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this._autosGroupBox = new System.Windows.Forms.GroupBox();
-            this._checkBoxAutoStart = new System.Windows.Forms.CheckBox();
-            this._checkBoxAutoFixation = new System.Windows.Forms.CheckBox();
+            //this._autosGroupBox = new System.Windows.Forms.GroupBox();
+            //this._checkBoxAutoStart = new System.Windows.Forms.CheckBox();
+            //this._checkBoxAutoFixation = new System.Windows.Forms.CheckBox();
             this._warningsGroupBox = new System.Windows.Forms.GroupBox();
             this._ardionoPrtWarningLabel = new System.Windows.Forms.Label();
-            this._checkBoxCenterRewardSound = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            //this._checkBoxCenterRewardSound = new System.Windows.Forms.CheckBox();
+            //this.groupBox1 = new System.Windows.Forms.GroupBox();
             this._checkboxRRDelta = new System.Windows.Forms.CheckBox();
             this._checkBoxRightAndLeftSame = new System.Windows.Forms.CheckBox();
-            this._checkboxSecondResponseChance = new System.Windows.Forms.CheckBox();
+            //this._checkboxSecondResponseChance = new System.Windows.Forms.CheckBox();
             this._checkBoxFixationOnly = new System.Windows.Forms.CheckBox();
-            this._checkboxSideRewardSound = new System.Windows.Forms.CheckBox();
+            //this._checkboxSideRewardSound = new System.Windows.Forms.CheckBox();
             this._checkBoxEnableGoCue = new System.Windows.Forms.CheckBox();
             this._checkboxErrorSoundOn = new System.Windows.Forms.CheckBox();
-            this._checkBoxBreakFixationSoundEnable = new System.Windows.Forms.CheckBox();
-            this._groupboxLedsController = new System.Windows.Forms.GroupBox();
-            this._textBoxLedBlueColor = new System.Windows.Forms.TextBox();
-            this._textBoxLedGreenColor = new System.Windows.Forms.TextBox();
-            this._textBoxLedRedColor = new System.Windows.Forms.TextBox();
-            this._labelBlueLed = new System.Windows.Forms.Label();
-            this._labelGreenLed = new System.Windows.Forms.Label();
-            this._labelRedLed = new System.Windows.Forms.Label();
-            this._textboxLEDBrightness = new System.Windows.Forms.TextBox();
-            this._labelBrightness = new System.Windows.Forms.Label();
-            this._textboxPercentageOfTurnOnLeds = new System.Windows.Forms.TextBox();
-            this._labelPercentageOfturnedOnLeds = new System.Windows.Forms.Label();
-            this._groupboxHandsSounds = new System.Windows.Forms.GroupBox();
-            this._btnBreakFixationSound = new System.Windows.Forms.Button();
-            this._btnRewardSound = new System.Windows.Forms.Button();
+            //this._checkBoxBreakFixationSoundEnable = new System.Windows.Forms.CheckBox();
+            //this._groupboxLedsController = new System.Windows.Forms.GroupBox();
+            //this._textBoxLedBlueColor = new System.Windows.Forms.TextBox();
+            //this._textBoxLedGreenColor = new System.Windows.Forms.TextBox();
+            //this._textBoxLedRedColor = new System.Windows.Forms.TextBox();
+            //this._labelBlueLed = new System.Windows.Forms.Label();
+            //this._labelGreenLed = new System.Windows.Forms.Label();
+            //this._labelRedLed = new System.Windows.Forms.Label();
+            //this._textboxLEDBrightness = new System.Windows.Forms.TextBox();
+            //this._labelBrightness = new System.Windows.Forms.Label();
+            //this._textboxPercentageOfTurnOnLeds = new System.Windows.Forms.TextBox();
+            //this._labelPercentageOfturnedOnLeds = new System.Windows.Forms.Label();
+            //this._groupboxHandsSounds = new System.Windows.Forms.GroupBox();
+            //this._btnBreakFixationSound = new System.Windows.Forms.Button();
+            //this._btnRewardSound = new System.Windows.Forms.Button();
             this._btnSaveProtocol = new System.Windows.Forms.Button();
             this._textboxNewProtocolName = new System.Windows.Forms.TextBox();
             this._labelNewProtocolName = new System.Windows.Forms.Label();
-            this._groupboxSoundModes = new System.Windows.Forms.GroupBox();
+            //this._groupboxSoundModes = new System.Windows.Forms.GroupBox();
             this._groupboxGoCue = new System.Windows.Forms.GroupBox();
             this._radiobuttonGoCueCorrectSide = new System.Windows.Forms.RadioButton();
             this._radiobuttonGoCueBothSide = new System.Windows.Forms.RadioButton();
             this._trialParametersGroup.SuspendLayout();
-            this._handRewardsgroupBox.SuspendLayout();
+            //this._handRewardsgroupBox.SuspendLayout();
             this._varyingControlGroupBox.SuspendLayout();
-            this._interactiveNolduscommuncation.SuspendLayout();
+            //this._interactiveNolduscommuncation.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this._drinkControlGroupBox.SuspendLayout();
-            this._selectedRatGroupBox.SuspendLayout();
+            //this._drinkControlGroupBox.SuspendLayout();
+            //this._selectedRatGroupBox.SuspendLayout();
             this._trialInfoGroupBox.SuspendLayout();
             this.globalExperimentInfogroupBox.SuspendLayout();
             this._onlinePsychGrpahGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._onlinePsychGraphControl)).BeginInit();
-            this._autosGroupBox.SuspendLayout();
+            //this._autosGroupBox.SuspendLayout();
             this._warningsGroupBox.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this._groupboxLedsController.SuspendLayout();
-            this._groupboxHandsSounds.SuspendLayout();
-            this._groupboxSoundModes.SuspendLayout();
+            //this.groupBox1.SuspendLayout();
+            //this._groupboxLedsController.SuspendLayout();
+            //this._groupboxHandsSounds.SuspendLayout();
+            //this._groupboxSoundModes.SuspendLayout();
             this._groupboxGoCue.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,7 +173,7 @@
             // _protocolsFolderBrowser
             // 
             //this._protocolsFolderBrowser.SelectedPath = "C:\\Users\\User\\Desktop\\protocols";
-            this._protocolsFolderBrowser.SelectedPath = "C:\\workspace\\FinalProject\\Protocols";
+            this._protocolsFolderBrowser.SelectedPath = "C:\\Users\\user\\source\\repos\\UniJoy\\Protocols";
             // 
             // _protocolBrowserBtn
             // 
@@ -207,7 +207,7 @@
             // _addVaryingCobination
             // 
             this._addVaryingCobination.Location = new System.Drawing.Point(87, 409);
-            this._addVaryingCobination.Name = "_addVaryingCobination";
+            this._addVaryingCobination.Name = "_addVaryingCombination";
             this._addVaryingCobination.Size = new System.Drawing.Size(114, 23);
             this._addVaryingCobination.TabIndex = 6;
             this._addVaryingCobination.Text = "Add Combination";
@@ -273,7 +273,7 @@
             // 
             // _handRewardsgroupBox
             // 
-            this._handRewardsgroupBox.Controls.Add(this._rightHandRewardCheckBox);
+            /*this._handRewardsgroupBox.Controls.Add(this._rightHandRewardCheckBox);
             this._handRewardsgroupBox.Controls.Add(this._centerHandRewardCheckBox);
             this._handRewardsgroupBox.Controls.Add(this._leftHandRewardCheckBox);
             this._handRewardsgroupBox.Controls.Add(this._digitalHandRewardButton);
@@ -283,11 +283,11 @@
             this._handRewardsgroupBox.Size = new System.Drawing.Size(192, 181);
             this._handRewardsgroupBox.TabIndex = 12;
             this._handRewardsgroupBox.TabStop = false;
-            this._handRewardsgroupBox.Text = "Hand Rewards";
+            this._handRewardsgroupBox.Text = "Hand Rewards";*/
             // 
             // _rightHandRewardCheckBox
             // 
-            this._rightHandRewardCheckBox.AutoSize = true;
+            /*this._rightHandRewardCheckBox.AutoSize = true;
             this._rightHandRewardCheckBox.Location = new System.Drawing.Point(78, 86);
             this._rightHandRewardCheckBox.Name = "_rightHandRewardCheckBox";
             this._rightHandRewardCheckBox.Size = new System.Drawing.Size(46, 17);
@@ -295,10 +295,11 @@
             this._rightHandRewardCheckBox.Text = "right";
             this._rightHandRewardCheckBox.UseVisualStyleBackColor = true;
             this._rightHandRewardCheckBox.CheckedChanged += new System.EventHandler(this._rightHandRewardCheckBox_CheckedChanged);
+            */
             // 
             // _centerHandRewardCheckBox
             // 
-            this._centerHandRewardCheckBox.AutoSize = true;
+            /*this._centerHandRewardCheckBox.AutoSize = true;
             this._centerHandRewardCheckBox.Location = new System.Drawing.Point(78, 52);
             this._centerHandRewardCheckBox.Name = "_centerHandRewardCheckBox";
             this._centerHandRewardCheckBox.Size = new System.Drawing.Size(56, 17);
@@ -306,10 +307,11 @@
             this._centerHandRewardCheckBox.Text = "center";
             this._centerHandRewardCheckBox.UseVisualStyleBackColor = true;
             this._centerHandRewardCheckBox.CheckedChanged += new System.EventHandler(this._centerHandRewardCheckBox_CheckedChanged);
+            */
             // 
             // _leftHandRewardCheckBox
             // 
-            this._leftHandRewardCheckBox.AutoSize = true;
+            /*this._leftHandRewardCheckBox.AutoSize = true;
             this._leftHandRewardCheckBox.Location = new System.Drawing.Point(78, 19);
             this._leftHandRewardCheckBox.Name = "_leftHandRewardCheckBox";
             this._leftHandRewardCheckBox.Size = new System.Drawing.Size(40, 17);
@@ -317,20 +319,22 @@
             this._leftHandRewardCheckBox.Text = "left";
             this._leftHandRewardCheckBox.UseVisualStyleBackColor = true;
             this._leftHandRewardCheckBox.CheckedChanged += new System.EventHandler(this._leftHandRewardCheckBox_CheckedChanged);
+            */
             // 
             // _digitalHandRewardButton
             // 
-            this._digitalHandRewardButton.Location = new System.Drawing.Point(6, 123);
+            /*this._digitalHandRewardButton.Location = new System.Drawing.Point(6, 123);
             this._digitalHandRewardButton.Name = "_digitalHandRewardButton";
             this._digitalHandRewardButton.Size = new System.Drawing.Size(75, 23);
             this._digitalHandRewardButton.TabIndex = 5;
             this._digitalHandRewardButton.Text = "Digital";
             this._digitalHandRewardButton.UseVisualStyleBackColor = true;
             this._digitalHandRewardButton.Click += new System.EventHandler(this._digitalHandRewardButton_Click);
+            */
             // 
             // _continiousHandRewardButton
             // 
-            this._continiousHandRewardButton.Location = new System.Drawing.Point(111, 123);
+            /*this._continiousHandRewardButton.Location = new System.Drawing.Point(111, 123);
             this._continiousHandRewardButton.Name = "_continiousHandRewardButton";
             this._continiousHandRewardButton.Size = new System.Drawing.Size(75, 23);
             this._continiousHandRewardButton.TabIndex = 4;
@@ -338,10 +342,11 @@
             this._continiousHandRewardButton.UseVisualStyleBackColor = true;
             this._continiousHandRewardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this._countiniousHandRewardKeyDown);
             this._continiousHandRewardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this._continiousHandRewardKeyReleaed);
+            */
             // 
             // _checkBoxAutoChoice
             // 
-            this._checkBoxAutoChoice.AutoSize = true;
+            /*this._checkBoxAutoChoice.AutoSize = true;
             this._checkBoxAutoChoice.Location = new System.Drawing.Point(5, 69);
             this._checkBoxAutoChoice.Name = "_checkBoxAutoChoice";
             this._checkBoxAutoChoice.Size = new System.Drawing.Size(84, 17);
@@ -349,6 +354,7 @@
             this._checkBoxAutoChoice.Text = "Auto Choice";
             this._checkBoxAutoChoice.UseVisualStyleBackColor = true;
             this._checkBoxAutoChoice.CheckedChanged += new System.EventHandler(this._autoRewardsTextBox_CheckedChanged);
+            */
             // 
             // _varyingControlGroupBox
             // 
@@ -463,7 +469,7 @@
             // 
             // _interactiveNolduscommuncation
             // 
-            this._interactiveNolduscommuncation.Controls.Add(this.panel3);
+            /*this._interactiveNolduscommuncation.Controls.Add(this.panel3);
             this._interactiveNolduscommuncation.Controls.Add(this.panel2);
             this._interactiveNolduscommuncation.Controls.Add(this.panel1);
             this._interactiveNolduscommuncation.Location = new System.Drawing.Point(1036, 555);
@@ -471,11 +477,11 @@
             this._interactiveNolduscommuncation.Size = new System.Drawing.Size(233, 146);
             this._interactiveNolduscommuncation.TabIndex = 14;
             this._interactiveNolduscommuncation.TabStop = false;
-            this._interactiveNolduscommuncation.Text = "Interacive Noldus Communication";
+            this._interactiveNolduscommuncation.Text = "Interacive Noldus Communication";*/
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this._rightNoldusCommunicationRadioButton);
+            //this.panel3.Controls.Add(this._rightNoldusCommunicationRadioButton);
             this.panel3.Location = new System.Drawing.Point(165, 61);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(47, 33);
@@ -483,35 +489,35 @@
             // 
             // _rightNoldusCommunicationRadioButton
             // 
-            this._rightNoldusCommunicationRadioButton.AutoSize = true;
+            /*this._rightNoldusCommunicationRadioButton.AutoSize = true;
             this._rightNoldusCommunicationRadioButton.Location = new System.Drawing.Point(19, 17);
             this._rightNoldusCommunicationRadioButton.Name = "_rightNoldusCommunicationRadioButton";
             this._rightNoldusCommunicationRadioButton.Size = new System.Drawing.Size(14, 13);
             this._rightNoldusCommunicationRadioButton.TabIndex = 2;
             this._rightNoldusCommunicationRadioButton.TabStop = true;
-            this._rightNoldusCommunicationRadioButton.UseVisualStyleBackColor = true;
+            this._rightNoldusCommunicationRadioButton.UseVisualStyleBackColor = true;*/
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this._centerNoldusCommunicationRadioButton);
+            /*this.panel2.Controls.Add(this._centerNoldusCommunicationRadioButton);
             this.panel2.Location = new System.Drawing.Point(91, 60);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(43, 34);
-            this.panel2.TabIndex = 4;
+            this.panel2.TabIndex = 4;*/
             // 
             // _centerNoldusCommunicationRadioButton
             // 
-            this._centerNoldusCommunicationRadioButton.AutoSize = true;
+            /*this._centerNoldusCommunicationRadioButton.AutoSize = true;
             this._centerNoldusCommunicationRadioButton.Location = new System.Drawing.Point(13, 18);
             this._centerNoldusCommunicationRadioButton.Name = "_centerNoldusCommunicationRadioButton";
             this._centerNoldusCommunicationRadioButton.Size = new System.Drawing.Size(14, 13);
             this._centerNoldusCommunicationRadioButton.TabIndex = 1;
             this._centerNoldusCommunicationRadioButton.TabStop = true;
-            this._centerNoldusCommunicationRadioButton.UseVisualStyleBackColor = true;
+            this._centerNoldusCommunicationRadioButton.UseVisualStyleBackColor = true;*/
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this._leftNoldusCommunicationRadioButton);
+            //this.panel1.Controls.Add(this._leftNoldusCommunicationRadioButton);
             this.panel1.Location = new System.Drawing.Point(19, 60);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(42, 34);
@@ -519,24 +525,25 @@
             // 
             // _leftNoldusCommunicationRadioButton
             // 
-            this._leftNoldusCommunicationRadioButton.AutoSize = true;
+            /*this._leftNoldusCommunicationRadioButton.AutoSize = true;
             this._leftNoldusCommunicationRadioButton.Location = new System.Drawing.Point(14, 18);
             this._leftNoldusCommunicationRadioButton.Name = "_leftNoldusCommunicationRadioButton";
             this._leftNoldusCommunicationRadioButton.Size = new System.Drawing.Size(14, 13);
             this._leftNoldusCommunicationRadioButton.TabIndex = 0;
             this._leftNoldusCommunicationRadioButton.TabStop = true;
-            this._leftNoldusCommunicationRadioButton.UseVisualStyleBackColor = true;
+            this._leftNoldusCommunicationRadioButton.UseVisualStyleBackColor = true;*/
+            //TODO: necessary?
             // 
             // _drinkControlGroupBox
             // 
-            this._drinkControlGroupBox.Controls.Add(this.label4);
+            /*this._drinkControlGroupBox.Controls.Add(this.label4);
             this._drinkControlGroupBox.Controls.Add(this.label3);
             this._drinkControlGroupBox.Location = new System.Drawing.Point(931, 555);
             this._drinkControlGroupBox.Name = "_drinkControlGroupBox";
             this._drinkControlGroupBox.Size = new System.Drawing.Size(99, 345);
             this._drinkControlGroupBox.TabIndex = 15;
             this._drinkControlGroupBox.TabStop = false;
-            this._drinkControlGroupBox.Text = "Drink Control";
+            this._drinkControlGroupBox.Text = "Drink Control";*/
             // 
             // label4
             // 
@@ -558,7 +565,7 @@
             // 
             // _selectedRatGroupBox
             // 
-            this._selectedRatGroupBox.Controls.Add(this._comboBoxStudentName);
+            /*this._selectedRatGroupBox.Controls.Add(this._comboBoxStudentName);
             this._selectedRatGroupBox.Controls.Add(this._comboBoxSelectedRatName);
             this._selectedRatGroupBox.Location = new System.Drawing.Point(1036, 707);
             this._selectedRatGroupBox.Name = "_selectedRatGroupBox";
@@ -566,25 +573,27 @@
             this._selectedRatGroupBox.TabIndex = 16;
             this._selectedRatGroupBox.TabStop = false;
             this._selectedRatGroupBox.Text = "SelectedRatAndStudent";
+            */
             // 
             // _comboBoxStudentName
             // 
-            this._comboBoxStudentName.FormattingEnabled = true;
+            /*this._comboBoxStudentName.FormattingEnabled = true;
             this._comboBoxStudentName.Location = new System.Drawing.Point(19, 47);
             this._comboBoxStudentName.Name = "_comboBoxStudentName";
             this._comboBoxStudentName.Size = new System.Drawing.Size(121, 21);
             this._comboBoxStudentName.TabIndex = 1;
             this._comboBoxStudentName.SelectedIndexChanged += new System.EventHandler(this._comboBoxStudentName_SelectedIndexChanged);
+            */
             // 
             // _comboBoxSelectedRatName
             // 
-            this._comboBoxSelectedRatName.FormattingEnabled = true;
+            /*this._comboBoxSelectedRatName.FormattingEnabled = true;
             this._comboBoxSelectedRatName.Location = new System.Drawing.Point(19, 20);
             this._comboBoxSelectedRatName.Name = "_comboBoxSelectedRatName";
             this._comboBoxSelectedRatName.Size = new System.Drawing.Size(121, 21);
             this._comboBoxSelectedRatName.TabIndex = 0;
             this._comboBoxSelectedRatName.SelectedValueChanged += new System.EventHandler(this._selectedRatNameComboBox_SelectedValueChanged);
-            // 
+            */ 
             // _guiInterfaceToolTip
             // 
             this._guiInterfaceToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
@@ -647,7 +656,7 @@
             // 
             // _autosGroupBox
             // 
-            this._autosGroupBox.Controls.Add(this._checkBoxAutoStart);
+            /*this._autosGroupBox.Controls.Add(this._checkBoxAutoStart);
             this._autosGroupBox.Controls.Add(this._checkBoxAutoFixation);
             this._autosGroupBox.Controls.Add(this._checkBoxAutoChoice);
             this._autosGroupBox.Location = new System.Drawing.Point(1036, 794);
@@ -655,11 +664,11 @@
             this._autosGroupBox.Size = new System.Drawing.Size(95, 106);
             this._autosGroupBox.TabIndex = 20;
             this._autosGroupBox.TabStop = false;
-            this._autosGroupBox.Text = "Autos";
+            this._autosGroupBox.Text = "Autos";*/
             // 
             // _checkBoxAutoStart
             // 
-            this._checkBoxAutoStart.AutoSize = true;
+            /*this._checkBoxAutoStart.AutoSize = true;
             this._checkBoxAutoStart.Location = new System.Drawing.Point(5, 23);
             this._checkBoxAutoStart.Name = "_checkBoxAutoStart";
             this._checkBoxAutoStart.Size = new System.Drawing.Size(73, 17);
@@ -667,10 +676,11 @@
             this._checkBoxAutoStart.Text = "Auto Start";
             this._checkBoxAutoStart.UseVisualStyleBackColor = true;
             this._checkBoxAutoStart.CheckedChanged += new System.EventHandler(this._autoStartcheckBox_CheckedChanged);
+            */
             // 
             // _checkBoxAutoFixation
             // 
-            this._checkBoxAutoFixation.AutoSize = true;
+            /*this._checkBoxAutoFixation.AutoSize = true;
             this._checkBoxAutoFixation.Location = new System.Drawing.Point(5, 46);
             this._checkBoxAutoFixation.Name = "_checkBoxAutoFixation";
             this._checkBoxAutoFixation.Size = new System.Drawing.Size(87, 17);
@@ -678,6 +688,7 @@
             this._checkBoxAutoFixation.Text = "Auto Fixation";
             this._checkBoxAutoFixation.UseVisualStyleBackColor = true;
             this._checkBoxAutoFixation.CheckedChanged += new System.EventHandler(this._autoFixation_CheckedChanged);
+            */
             // 
             // _warningsGroupBox
             // 
@@ -703,7 +714,7 @@
             // 
             // _checkBoxCenterRewardSound
             // 
-            this._checkBoxCenterRewardSound.AutoSize = true;
+            /*this._checkBoxCenterRewardSound.AutoSize = true;
             this._checkBoxCenterRewardSound.Location = new System.Drawing.Point(4, 19);
             this._checkBoxCenterRewardSound.Name = "_checkBoxCenterRewardSound";
             this._checkBoxCenterRewardSound.Size = new System.Drawing.Size(97, 17);
@@ -711,19 +722,20 @@
             this._checkBoxCenterRewardSound.Text = "Center Reward";
             this._checkBoxCenterRewardSound.UseVisualStyleBackColor = true;
             this._checkBoxCenterRewardSound.CheckedChanged += new System.EventHandler(this._checkboxCenterRewardSound_CheckedChanged);
+            */
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this._checkboxRRDelta);
-            this.groupBox1.Controls.Add(this._checkBoxRightAndLeftSame);
-            this.groupBox1.Controls.Add(this._checkboxSecondResponseChance);
-            this.groupBox1.Controls.Add(this._checkBoxFixationOnly);
-            this.groupBox1.Location = new System.Drawing.Point(1137, 794);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(111, 106);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Special Modes";
+            //this.groupBox1.Controls.Add(this._checkboxRRDelta);
+            //this.groupBox1.Controls.Add(this._checkBoxRightAndLeftSame);
+            //this.groupBox1.Controls.Add(this._checkboxSecondResponseChance);
+            //this.groupBox1.Controls.Add(this._checkBoxFixationOnly);
+            //this.groupBox1.Location = new System.Drawing.Point(1137, 794);
+            //this.groupBox1.Name = "groupBox1";
+            //this.groupBox1.Size = new System.Drawing.Size(111, 106);
+            //this.groupBox1.TabIndex = 22;
+            //this.groupBox1.TabStop = false;
+            //this.groupBox1.Text = "Special Modes";
             // 
             // _checkboxRRDelta
             // 
@@ -749,7 +761,7 @@
             // 
             // _checkboxSecondResponseChance
             // 
-            this._checkboxSecondResponseChance.AutoSize = true;
+            /*this._checkboxSecondResponseChance.AutoSize = true;
             this._checkboxSecondResponseChance.Location = new System.Drawing.Point(2, 40);
             this._checkboxSecondResponseChance.Name = "_checkboxSecondResponseChance";
             this._checkboxSecondResponseChance.Size = new System.Drawing.Size(103, 17);
@@ -757,6 +769,7 @@
             this._checkboxSecondResponseChance.Text = "2ndRes Chance";
             this._checkboxSecondResponseChance.UseVisualStyleBackColor = true;
             this._checkboxSecondResponseChance.CheckedChanged += new System.EventHandler(this._checkboxSecondResponseChance_CheckedChanged);
+            */
             // 
             // _checkBoxFixationOnly
             // 
@@ -771,7 +784,7 @@
             // 
             // _checkboxSideRewardSound
             // 
-            this._checkboxSideRewardSound.AutoSize = true;
+            /*this._checkboxSideRewardSound.AutoSize = true;
             this._checkboxSideRewardSound.Location = new System.Drawing.Point(4, 40);
             this._checkboxSideRewardSound.Name = "_checkboxSideRewardSound";
             this._checkboxSideRewardSound.Size = new System.Drawing.Size(84, 17);
@@ -779,6 +792,7 @@
             this._checkboxSideRewardSound.Text = "Side Rewad";
             this._checkboxSideRewardSound.UseVisualStyleBackColor = true;
             this._checkboxSideRewardSound.CheckedChanged += new System.EventHandler(this._checkboxSideRewardSound_CheckedChanged);
+            */
             // 
             // _checkBoxEnableGoCue
             // 
@@ -804,7 +818,7 @@
             // 
             // _checkBoxBreakFixationSoundEnable
             // 
-            this._checkBoxBreakFixationSoundEnable.AutoSize = true;
+            /*this._checkBoxBreakFixationSoundEnable.AutoSize = true;
             this._checkBoxBreakFixationSoundEnable.Location = new System.Drawing.Point(4, 61);
             this._checkBoxBreakFixationSoundEnable.Name = "_checkBoxBreakFixationSoundEnable";
             this._checkBoxBreakFixationSoundEnable.Size = new System.Drawing.Size(42, 17);
@@ -812,10 +826,11 @@
             this._checkBoxBreakFixationSoundEnable.Text = "B.F";
             this._checkBoxBreakFixationSoundEnable.UseVisualStyleBackColor = true;
             this._checkBoxBreakFixationSoundEnable.CheckedChanged += new System.EventHandler(this._breakFixationSoundEnableCheckBox_CheckedChanged);
+            */
             // 
             // _groupboxLedsController
             // 
-            this._groupboxLedsController.Controls.Add(this._textBoxLedBlueColor);
+            /*this._groupboxLedsController.Controls.Add(this._textBoxLedBlueColor);
             this._groupboxLedsController.Controls.Add(this._textBoxLedGreenColor);
             this._groupboxLedsController.Controls.Add(this._textBoxLedRedColor);
             this._groupboxLedsController.Controls.Add(this._labelBlueLed);
@@ -830,11 +845,11 @@
             this._groupboxLedsController.Size = new System.Drawing.Size(145, 106);
             this._groupboxLedsController.TabIndex = 23;
             this._groupboxLedsController.TabStop = false;
-            this._groupboxLedsController.Text = "Leds Controller";
+            this._groupboxLedsController.Text = "Leds Controller";*/
             // 
             // _textBoxLedBlueColor
             // 
-            this._textBoxLedBlueColor.Location = new System.Drawing.Point(118, 72);
+            /*this._textBoxLedBlueColor.Location = new System.Drawing.Point(118, 72);
             this._textBoxLedBlueColor.Name = "_textBoxLedBlueColor";
             this._textBoxLedBlueColor.Size = new System.Drawing.Size(22, 20);
             this._textBoxLedBlueColor.TabIndex = 10;
@@ -916,37 +931,39 @@
             this._labelPercentageOfturnedOnLeds.Size = new System.Drawing.Size(82, 13);
             this._labelPercentageOfturnedOnLeds.TabIndex = 0;
             this._labelPercentageOfturnedOnLeds.Text = "% turn on LEDS";
+            */
             // 
             // _groupboxHandsSounds
             // 
-            this._groupboxHandsSounds.Controls.Add(this._btnBreakFixationSound);
+            /*this._groupboxHandsSounds.Controls.Add(this._btnBreakFixationSound);
             this._groupboxHandsSounds.Controls.Add(this._btnRewardSound);
             this._groupboxHandsSounds.Location = new System.Drawing.Point(565, 722);
             this._groupboxHandsSounds.Name = "_groupboxHandsSounds";
             this._groupboxHandsSounds.Size = new System.Drawing.Size(161, 178);
             this._groupboxHandsSounds.TabIndex = 24;
             this._groupboxHandsSounds.TabStop = false;
-            this._groupboxHandsSounds.Text = "Hands Sounds";
+            this._groupboxHandsSounds.Text = "Hands Sounds";*/
             // 
             // _btnBreakFixationSound
             // 
-            this._btnBreakFixationSound.Location = new System.Drawing.Point(22, 77);
+            /*this._btnBreakFixationSound.Location = new System.Drawing.Point(22, 77);
             this._btnBreakFixationSound.Name = "_btnBreakFixationSound";
             this._btnBreakFixationSound.Size = new System.Drawing.Size(117, 23);
             this._btnBreakFixationSound.TabIndex = 1;
             this._btnBreakFixationSound.Text = "Break Fixation";
             this._btnBreakFixationSound.UseVisualStyleBackColor = true;
             this._btnBreakFixationSound.Click += new System.EventHandler(this._btnBreakFixationSound_Click);
+            */
             // 
             // _btnRewardSound
             // 
-            this._btnRewardSound.Location = new System.Drawing.Point(22, 32);
+            /*this._btnRewardSound.Location = new System.Drawing.Point(22, 32);
             this._btnRewardSound.Name = "_btnRewardSound";
             this._btnRewardSound.Size = new System.Drawing.Size(117, 23);
             this._btnRewardSound.TabIndex = 0;
             this._btnRewardSound.Text = "Reward Sound";
             this._btnRewardSound.UseVisualStyleBackColor = true;
-            this._btnRewardSound.Click += new System.EventHandler(this._btnRewardSound_Click);
+            this._btnRewardSound.Click += new System.EventHandler(this._btnRewardSound_Click);*/
             // 
             // _btnSaveProtocol
             // 
@@ -976,7 +993,7 @@
             // 
             // _groupboxSoundModes
             // 
-            this._groupboxSoundModes.Controls.Add(this._groupboxGoCue);
+            /*this._groupboxSoundModes.Controls.Add(this._groupboxGoCue);
             this._groupboxSoundModes.Controls.Add(this._checkboxSideRewardSound);
             this._groupboxSoundModes.Controls.Add(this._checkBoxCenterRewardSound);
             this._groupboxSoundModes.Controls.Add(this._checkBoxBreakFixationSoundEnable);
@@ -987,7 +1004,7 @@
             this._groupboxSoundModes.Size = new System.Drawing.Size(224, 106);
             this._groupboxSoundModes.TabIndex = 28;
             this._groupboxSoundModes.TabStop = false;
-            this._groupboxSoundModes.Text = "Sound Modes";
+            this._groupboxSoundModes.Text = "Sound Modes";*/
             // 
             // _groupboxGoCue
             // 
@@ -1029,61 +1046,61 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1678, 912);
-            this.Controls.Add(this._groupboxSoundModes);
+            //this.Controls.Add(this._groupboxSoundModes);
             this.Controls.Add(this._labelNewProtocolName);
             this.Controls.Add(this._textboxNewProtocolName);
             this.Controls.Add(this._btnSaveProtocol);
-            this.Controls.Add(this._groupboxHandsSounds);
-            this.Controls.Add(this._groupboxLedsController);
-            this.Controls.Add(this.groupBox1);
+            //this.Controls.Add(this._groupboxHandsSounds);
+            //this.Controls.Add(this._groupboxLedsController);
+            //this.Controls.Add(this.groupBox1);
             this.Controls.Add(this._warningsGroupBox);
-            this.Controls.Add(this._autosGroupBox);
+            //this.Controls.Add(this._autosGroupBox);
             this.Controls.Add(this._onlinePsychGrpahGroupBox);
             this.Controls.Add(this.globalExperimentInfogroupBox);
             this.Controls.Add(this._trialInfoGroupBox);
-            this.Controls.Add(this._selectedRatGroupBox);
-            this.Controls.Add(this._drinkControlGroupBox);
-            this.Controls.Add(this._interactiveNolduscommuncation);
+            //this.Controls.Add(this._selectedRatGroupBox);
+            //this.Controls.Add(this._drinkControlGroupBox);
+            //this.Controls.Add(this._interactiveNolduscommuncation);
             this.Controls.Add(this._varyingControlGroupBox);
-            this.Controls.Add(this._handRewardsgroupBox);
+            //this.Controls.Add(this._handRewardsgroupBox);
             this.Controls.Add(this._trialParametersGroup);
             this.Controls.Add(this._protocolBrowserBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this._protocolsComboBox);
-            this.Name = "GuiInterface";
-            this.Text = "GuiInterface";
+            this.Name = "UniJoy";
+            this.Text = "UniJoy";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GuiInterface_Close);
             this._trialParametersGroup.ResumeLayout(false);
-            this._handRewardsgroupBox.ResumeLayout(false);
-            this._handRewardsgroupBox.PerformLayout();
+            //this._handRewardsgroupBox.ResumeLayout(false);
+            //this._handRewardsgroupBox.PerformLayout();
             this._varyingControlGroupBox.ResumeLayout(false);
             this._varyingControlGroupBox.PerformLayout();
-            this._interactiveNolduscommuncation.ResumeLayout(false);
+            //this._interactiveNolduscommuncation.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this._drinkControlGroupBox.ResumeLayout(false);
-            this._drinkControlGroupBox.PerformLayout();
-            this._selectedRatGroupBox.ResumeLayout(false);
+            //this._drinkControlGroupBox.ResumeLayout(false);
+            //this._drinkControlGroupBox.PerformLayout();
+            //this._selectedRatGroupBox.ResumeLayout(false);
             this._trialInfoGroupBox.ResumeLayout(false);
             this.globalExperimentInfogroupBox.ResumeLayout(false);
             this._onlinePsychGrpahGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._onlinePsychGraphControl)).EndInit();
-            this._autosGroupBox.ResumeLayout(false);
-            this._autosGroupBox.PerformLayout();
+            //this._autosGroupBox.ResumeLayout(false);
+            //this._autosGroupBox.PerformLayout();
             this._warningsGroupBox.ResumeLayout(false);
             this._warningsGroupBox.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this._groupboxLedsController.ResumeLayout(false);
-            this._groupboxLedsController.PerformLayout();
-            this._groupboxHandsSounds.ResumeLayout(false);
-            this._groupboxSoundModes.ResumeLayout(false);
-            this._groupboxSoundModes.PerformLayout();
+            //this.groupBox1.ResumeLayout(false);
+            //this.groupBox1.PerformLayout();
+            //this._groupboxLedsController.ResumeLayout(false);
+            //this._groupboxLedsController.PerformLayout();
+            //this._groupboxHandsSounds.ResumeLayout(false);
+            //this._groupboxSoundModes.ResumeLayout(false);
+            //this._groupboxSoundModes.PerformLayout();
             this._groupboxGoCue.ResumeLayout(false);
             this._groupboxGoCue.PerformLayout();
             this.ResumeLayout(false);
@@ -1107,26 +1124,26 @@
         private System.Windows.Forms.ListView _trialDetailsListView;
         private System.Windows.Forms.GroupBox _trialParametersGroup;
         private System.Windows.Forms.Panel _dynamicParametersPanel;
-        private System.Windows.Forms.GroupBox _handRewardsgroupBox;
-        private System.Windows.Forms.Button _digitalHandRewardButton;
-        private System.Windows.Forms.Button _continiousHandRewardButton;
-        private System.Windows.Forms.CheckBox _rightHandRewardCheckBox;
-        private System.Windows.Forms.CheckBox _centerHandRewardCheckBox;
-        private System.Windows.Forms.CheckBox _leftHandRewardCheckBox;
+        //private System.Windows.Forms.GroupBox _handRewardsgroupBox;
+        //private System.Windows.Forms.Button _digitalHandRewardButton;
+        //private System.Windows.Forms.Button _continiousHandRewardButton;
+        //private System.Windows.Forms.CheckBox _rightHandRewardCheckBox;
+        //private System.Windows.Forms.CheckBox _centerHandRewardCheckBox;
+        //private System.Windows.Forms.CheckBox _leftHandRewardCheckBox;
         private System.Windows.Forms.GroupBox _varyingControlGroupBox;
-        private System.Windows.Forms.GroupBox _interactiveNolduscommuncation;
-        private System.Windows.Forms.RadioButton _rightNoldusCommunicationRadioButton;
-        private System.Windows.Forms.RadioButton _centerNoldusCommunicationRadioButton;
-        private System.Windows.Forms.RadioButton _leftNoldusCommunicationRadioButton;
+        //private System.Windows.Forms.GroupBox _interactiveNolduscommuncation;
+        //private System.Windows.Forms.RadioButton _rightNoldusCommunicationRadioButton;
+        //private System.Windows.Forms.RadioButton _centerNoldusCommunicationRadioButton;
+        //private System.Windows.Forms.RadioButton _leftNoldusCommunicationRadioButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox _drinkControlGroupBox;
+        //private System.Windows.Forms.GroupBox _drinkControlGroupBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private System.Windows.Forms.GroupBox _selectedRatGroupBox;
-        private System.Windows.Forms.ComboBox _comboBoxSelectedRatName;
+        //private System.Windows.Forms.GroupBox _selectedRatGroupBox;
+        //private System.Windows.Forms.ComboBox _comboBoxSelectedRatName;
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
         private System.Windows.Forms.ToolTip _guiInterfaceToolTip;
         private System.Windows.Forms.GroupBox _trialInfoGroupBox;
@@ -1136,47 +1153,47 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox _onlinePsychGrpahGroupBox;
         private System.Windows.Forms.DataVisualization.Charting.Chart _onlinePsychGraphControl;
-        private System.Windows.Forms.CheckBox _checkBoxAutoChoice;
-        private System.Windows.Forms.GroupBox _autosGroupBox;
-        private System.Windows.Forms.CheckBox _checkBoxAutoStart;
-        private System.Windows.Forms.CheckBox _checkBoxAutoFixation;
+        //private System.Windows.Forms.CheckBox _checkBoxAutoChoice;
+        //private System.Windows.Forms.GroupBox _autosGroupBox;
+        //private System.Windows.Forms.CheckBox _checkBoxAutoStart;
+        //private System.Windows.Forms.CheckBox _checkBoxAutoFixation;
         private System.Windows.Forms.GroupBox _warningsGroupBox;
         private System.Windows.Forms.Label _ardionoPrtWarningLabel;
-        private System.Windows.Forms.CheckBox _checkBoxCenterRewardSound;
-        private System.Windows.Forms.GroupBox groupBox1;
+        //private System.Windows.Forms.CheckBox _checkBoxCenterRewardSound;
+        //private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox _checkBoxFixationOnly;
         private System.Windows.Forms.CheckBox _checkBoxBreakFixationSoundEnable;
-        private System.Windows.Forms.GroupBox _groupboxLedsController;
-        private System.Windows.Forms.TextBox _textboxPercentageOfTurnOnLeds;
-        private System.Windows.Forms.Label _labelPercentageOfturnedOnLeds;
-        private System.Windows.Forms.Label _labelBrightness;
-        private System.Windows.Forms.TextBox _textboxLEDBrightness;
+        //private System.Windows.Forms.GroupBox _groupboxLedsController;
+        //private System.Windows.Forms.TextBox _textboxPercentageOfTurnOnLeds;
+        //private System.Windows.Forms.Label _labelPercentageOfturnedOnLeds;
+        //private System.Windows.Forms.Label _labelBrightness;
+        //private System.Windows.Forms.TextBox _textboxLEDBrightness;
         private System.Windows.Forms.Label _labelStickOnNumber;
         private System.Windows.Forms.TextBox _textboxStickOnNumber;
         private System.Windows.Forms.Button _btnResume;
         private System.Windows.Forms.Button _btnPause;
         private System.Windows.Forms.Button _btnPark;
         private System.Windows.Forms.Button _btnEnagae;
-        private System.Windows.Forms.CheckBox _checkboxSecondResponseChance;
-        private System.Windows.Forms.ComboBox _comboBoxStudentName;
-        private System.Windows.Forms.GroupBox _groupboxHandsSounds;
+        //private System.Windows.Forms.CheckBox _checkboxSecondResponseChance;
+        //private System.Windows.Forms.ComboBox _comboBoxStudentName;
+        //private System.Windows.Forms.GroupBox _groupboxHandsSounds;
         private System.Windows.Forms.Button _btnBreakFixationSound;
-        private System.Windows.Forms.Button _btnRewardSound;
+        //private System.Windows.Forms.Button _btnRewardSound;
         private System.Windows.Forms.CheckBox _checkboxErrorSoundOn;
         private System.Windows.Forms.CheckBox _checkBoxEnableGoCue;
         private System.Windows.Forms.Button _btnSaveProtocol;
         private System.Windows.Forms.TextBox _textboxNewProtocolName;
         private System.Windows.Forms.Label _labelNewProtocolName;
         private System.Windows.Forms.CheckBox _checkBoxRightAndLeftSame;
-        private System.Windows.Forms.TextBox _textBoxLedBlueColor;
-        private System.Windows.Forms.TextBox _textBoxLedGreenColor;
-        private System.Windows.Forms.TextBox _textBoxLedRedColor;
-        private System.Windows.Forms.Label _labelBlueLed;
-        private System.Windows.Forms.Label _labelGreenLed;
-        private System.Windows.Forms.Label _labelRedLed;
+        //private System.Windows.Forms.TextBox _textBoxLedBlueColor;
+        //private System.Windows.Forms.TextBox _textBoxLedGreenColor;
+        //private System.Windows.Forms.TextBox _textBoxLedRedColor;
+        //private System.Windows.Forms.Label _labelBlueLed;
+        //private System.Windows.Forms.Label _labelGreenLed;
+        //private System.Windows.Forms.Label _labelRedLed;
         private System.Windows.Forms.CheckBox _checkboxRRDelta;
-        private System.Windows.Forms.CheckBox _checkboxSideRewardSound;
-        private System.Windows.Forms.GroupBox _groupboxSoundModes;
+        //private System.Windows.Forms.CheckBox _checkboxSideRewardSound;
+        //private System.Windows.Forms.GroupBox _groupboxSoundModes;
         private System.Windows.Forms.GroupBox _groupboxGoCue;
         private System.Windows.Forms.RadioButton _radiobuttonGoCueCorrectSide;
         private System.Windows.Forms.RadioButton _radiobuttonGoCueBothSide;

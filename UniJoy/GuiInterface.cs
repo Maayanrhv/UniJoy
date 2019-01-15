@@ -27,7 +27,7 @@ namespace UniJoy
         private string _protoclsDirPath;
 
         /// <summary>
-        /// The variables readen from the xlsx protocol file.
+        /// The variables read from the xlsx protocol file.
         /// </summary>
         private Variables _variablesList;
 
@@ -37,19 +37,19 @@ namespace UniJoy
         private ExcelProtocolConfigFileLoader _excelLoader;
 
         /// <summary>
-        /// The dictionary of the dynamic allocated textboxes that allocated each time the user choose different protocol.
+        /// The dictionary of the dynamic allocated textboxes that are allocated each time the user choose different protocol.
         /// It saves the dynamic TextBox reference.
         /// The string represent the name of the varName concatinating with the attributename for each textbox.
         /// </summary>
         private Dictionary<string, Control> _dynamicAllocatedTextBoxes;
 
         /// <summary>
-        /// Dictionary describes all ButtonBase (checkboxes and radiobuttons) names in the gui as keys with their conrol as value.
+        /// Dictionary that describes all ButtonBase (checkboxes and radiobuttons) names in the gui as keys with their control as value.
         /// </summary>
         private Dictionary<string, ButtonBase> _buttonbasesDictionary;
 
         /// <summary>
-        /// A list holds all the titles for the variables attribute to show in the title of the table.
+        /// A list that holds all the titles for the variables attribute to show in the title of the table.
         /// </summary>
         private List<Label> _titlesLabelsList;
 
@@ -78,6 +78,7 @@ namespace UniJoy
         /// </summary>
         private string _selectedProtocolName;
 
+        //TODO: necessary?
         /// <summary>
         /// The selected directions to give them hand REWARD (xxxxxyyy).
         /// The y-y-y is the indicators for the directions as followed by left-center-right.
@@ -170,7 +171,7 @@ namespace UniJoy
             _isEngaged = false;
 
             //add the students names (as the setting have) to the student names combo box.
-            AddStudentsNamesToRatNamesComboBox();
+            //AddStudentsNamesToRatNamesComboBox();
 
             //set the default file browser protocol path directory.
             SetDefaultProtocolFileBrowserDirectory();
@@ -434,17 +435,17 @@ namespace UniJoy
         /// <param name="data"></param>
         private void SetNoldusRatResponseInteractivePanel(byte data)
         {
-            _leftNoldusCommunicationRadioButton.Checked = (data & 1) > 0;
+            //_leftNoldusCommunicationRadioButton.Checked = (data & 1) > 0;
 
-            _centerNoldusCommunicationRadioButton.Checked = (data & 2) > 0;
+            //_centerNoldusCommunicationRadioButton.Checked = (data & 2) > 0;
 
-            _rightNoldusCommunicationRadioButton.Checked = (data & 4) > 0;
+            //_rightNoldusCommunicationRadioButton.Checked = (data & 4) > 0;
 
-            _leftHandRewardCheckBox.Show();
+            //_leftHandRewardCheckBox.Show();
 
-            _centerHandRewardCheckBox.Show();
+            //_centerHandRewardCheckBox.Show();
 
-            _rightHandRewardCheckBox.Show();
+            //_rightHandRewardCheckBox.Show();
         }
 
         /// <summary>
@@ -467,8 +468,8 @@ namespace UniJoy
         /// </summary>
         private void ResetSelectedRatNameCombobox()
         {
-            _comboBoxSelectedRatName.ResetText();
-            _comboBoxSelectedRatName.SelectedItem = null;
+            //_comboBoxSelectedRatName.ResetText();
+            //_comboBoxSelectedRatName.SelectedItem = null;
         }
 
         /// <summary>
@@ -476,8 +477,8 @@ namespace UniJoy
         /// </summary>
         private void ResetSelectedStudentNameComboBox()
         {
-            _comboBoxStudentName.ResetText();
-            _comboBoxStudentName.SelectedItem = null;
+            //_comboBoxStudentName.ResetText();
+            //_comboBoxStudentName.SelectedItem = null;
         }
 
         /// <summary>
@@ -517,7 +518,7 @@ namespace UniJoy
             //add the delegates for the Noldus rat response interactive panel checkboxes.
             SetNoldusRatResponseInteractivePanelCheckboxes setNoldusRatResponseInteractivePanelCheckboxesDelegate = new SetNoldusRatResponseInteractivePanelCheckboxes(SetNoldusRatResponseInteractivePanel);
             ctrlDelegatesDic.Add("SetNoldusRatResponseInteractivePanel", setNoldusRatResponseInteractivePanelCheckboxesDelegate);
-            ctrlDictionary.Add("SetNoldusRatResponseInteractivePanel", _centerHandRewardCheckBox);
+            //ctrlDictionary.Add("SetNoldusRatResponseInteractivePanel", _centerHandRewardCheckBox);
 
             //add the delegate for event indicates finshing all rounds in trial experiment.
             FinishedAllTrialsInRoundDelegate finishedAlltrialRoundDelegate = new FinishedAllTrialsInRoundDelegate(FinishedAllTrialsRound);
@@ -539,12 +540,12 @@ namespace UniJoy
             //add the delegate for clearing the selected rat name.
             ResetSelectedRatNameComboboxDelegate resetSelectedRatNameComboboxDelegate = new ResetSelectedRatNameComboboxDelegate(ResetSelectedRatNameCombobox);
             ctrlDelegatesDic.Add("ResetSelectedRatNameCombobox", resetSelectedRatNameComboboxDelegate);
-            ctrlDictionary.Add("ResetSelectedRatNameCombobox", _comboBoxSelectedRatName);
+            //ctrlDictionary.Add("ResetSelectedRatNameCombobox", _comboBoxSelectedRatName);
 
             //add the delegate for clearing the selected student name.
             ResetSelectedStudentNameComboboxDelegate resetSelectedStudentNameComboboxDelegate = new ResetSelectedStudentNameComboboxDelegate(ResetSelectedStudentNameComboBox);
             ctrlDelegatesDic.Add("ResetSelectedStudentNameCombobox", resetSelectedStudentNameComboboxDelegate);
-            ctrlDictionary.Add("ResetSelectedStudentNameCombobox", _comboBoxStudentName);
+            //ctrlDictionary.Add("ResetSelectedStudentNameCombobox", _comboBoxStudentName);
 
             //return both dictionaries.
             return new Tuple<Dictionary<string, Control>, Dictionary<string, Delegate>>(ctrlDictionary, ctrlDelegatesDic);
@@ -654,6 +655,7 @@ namespace UniJoy
             //delete the extension and the additional name from the full name to get the short name.
             _selectedProtocolName = _selectedProtocolFullName.Split('.')[0].Split('-')[0];
 
+            //_protocolsComboBox.SelectedItem = _selectedProtocolFullName;
             //_protocolsComboBox.SelectedItem = _protocolsComboBox.Items[0];
             SetVariables(_protoclsDirPath + "\\" + _selectedProtocolFullName);
             ShowVariablesToGui();
@@ -719,14 +721,14 @@ namespace UniJoy
         /// <summary>
         /// Adding the students names to the rat names combo box by the configuration settings.
         /// </summary>
-        public void AddStudentsNamesToRatNamesComboBox()
+        /*public void AddStudentsNamesToRatNamesComboBox()
         {
             //add the rat names in the config file to thw combo box.
             foreach (string studentName in Properties.Settings.Default.StudentsName)
             {
                 _comboBoxStudentName.Items.Add(studentName);
             }
-        }
+        }*/
 
         /// <summary>
         /// Function handler for changing the rat name.
@@ -800,11 +802,11 @@ namespace UniJoy
 
                             _cntrlLoop.NumOfRepetitions = int.Parse(_numOfRepetitionsTextBox.Text.ToString());
                             _cntrlLoop.NumOfStickOn = int.Parse(_textboxStickOnNumber.Text.ToString());
-                            _cntrlLoop.PercentageOfTurnedOnLeds = double.Parse(_textboxPercentageOfTurnOnLeds.Text.ToString());
-                            _cntrlLoop.LEDBrightness = int.Parse(_textboxLEDBrightness.Text.ToString());
-                            _cntrlLoop.LEDcolorRed = int.Parse(_textBoxLedRedColor.Text.ToString());
-                            _cntrlLoop.LEDcolorGreen = int.Parse(_textBoxLedGreenColor.Text.ToString());
-                            _cntrlLoop.LEDcolorBlue = int.Parse(_textBoxLedBlueColor.Text.ToString());
+                            //_cntrlLoop.PercentageOfTurnedOnLeds = double.Parse(_textboxPercentageOfTurnOnLeds.Text.ToString());
+                            //_cntrlLoop.LEDBrightness = int.Parse(_textboxLEDBrightness.Text.ToString());
+                            //_cntrlLoop.LEDcolorRed = int.Parse(_textBoxLedRedColor.Text.ToString());
+                            //_cntrlLoop.LEDcolorGreen = int.Parse(_textBoxLedGreenColor.Text.ToString());
+                            //_cntrlLoop.LEDcolorBlue = int.Parse(_textBoxLedBlueColor.Text.ToString());
                             _cntrlLoop.ProtocolFullName = _selectedProtocolFullName.Split('.')[0];//delete the.xlsx extension from the protocol file name.
                             _cntrlLoop.Start(_variablesList, _acrossVectorValuesGenerator._crossVaryingValsBoth, _staticValuesGenerator._staticVariableList, Properties.Settings.Default.Frequency, trajectoryCreator);
                         }
@@ -824,14 +826,14 @@ namespace UniJoy
         private bool StartLoopStartCheck()
         {
             //if selected rat name is o.k
-            if (_comboBoxSelectedRatName.SelectedItem != null && _comboBoxStudentName.SelectedItem != null)
+            /*if (_comboBoxSelectedRatName.SelectedItem != null && _comboBoxStudentName.SelectedItem != null)
             {
             }
             else
             {
                 MessageBox.Show("Error - Should select a rat name before starting!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
-            }
+            }*/
 
             if (int.Parse(_numOfRepetitionsTextBox.Text.ToString()) % int.Parse(_textboxStickOnNumber.Text.ToString()) != 0)
             {
@@ -1547,7 +1549,7 @@ namespace UniJoy
             if (selectedIndex > 0)
             {
                 //take the selected item.
-                //VaryingItem selectedCombination = _varyingListBox.SelectedItem as VaryingItem;
+                VaryingItem selectedCombination = _varyingListBox.SelectedItem as VaryingItem;
 
                 //set the _acrossVectorValuesGenerator cross varying values
                 //_acrossVectorValuesGenerator._crossVaryingVals.RemoveAt(selectedCombination._listIndex);
@@ -1561,7 +1563,7 @@ namespace UniJoy
                 //ReduceIndexesFromNumberedIndex(selectedCombination._listIndex, _varyingListBox);
 
                 //if (selectedCombination._listIndex > 0)
-                //_varyingListBox.SelectedItem = (_varyingListBox.Items[selectedCombination._listIndex - 1] as VaryingItem);
+                _varyingListBox.SelectedItem = (_varyingListBox.Items[selectedCombination._listIndex - 1] as VaryingItem);
 
                 if (selectedIndex > 1)
                 {
@@ -1793,9 +1795,9 @@ namespace UniJoy
         /// <param name="e">The param.</param>
         private void _autoRewardsTextBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (_checkBoxAutoChoice.Checked)
+            /*if (_checkBoxAutoChoice.Checked)
                 _cntrlLoop.AutoReward = true;
-            else
+            else*/
                 _cntrlLoop.AutoReward = false;
         }
 
@@ -1806,9 +1808,9 @@ namespace UniJoy
         /// <param name="e">The param.</param>
         private void _autoFixation_CheckedChanged(object sender, EventArgs e)
         {
-            if (_checkBoxAutoFixation.Checked)
+            /*if (_checkBoxAutoFixation.Checked)
                 _cntrlLoop.AutoFixation = true;
-            else
+            else*/
                 _cntrlLoop.AutoFixation = false;
         }
 
@@ -1819,9 +1821,9 @@ namespace UniJoy
         /// <param name="e">The param.</param>
         private void _autoStartcheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (_checkBoxAutoStart.Checked)
+            /*if (_checkBoxAutoStart.Checked)
                 _cntrlLoop.AutoStart = true;
-            else
+            else*/
                 _cntrlLoop.AutoStart = false;
         }
         #endregion AUTOS
@@ -1860,17 +1862,17 @@ namespace UniJoy
         /// <param name="e">The param.</param>
         private void _checkboxCenterRewardSound_CheckedChanged(object sender, EventArgs e)
         {
-            if (_checkBoxCenterRewardSound.Checked)
+            /*if (_checkBoxCenterRewardSound.Checked)
                 _cntrlLoop.CenterRewardSound = true;
-            else
+            else*/
                 _cntrlLoop.CenterRewardSound = false;
         }
 
         private void _checkboxSideRewardSound_CheckedChanged(object sender, EventArgs e)
         {
-            if (_checkboxSideRewardSound.Checked)
+            /*if (_checkboxSideRewardSound.Checked)
                 _cntrlLoop.SideRewardSound = true;
-            else
+            else*/
                 _cntrlLoop.SideRewardSound = false;
         }
 
@@ -2072,6 +2074,7 @@ namespace UniJoy
             }
 
             //filter only the variables where the status is  -1 (for the checkboxes for the gui).
+            IEnumerable<string> myList = _variablesList._variablesDictionary.Keys.Where(name => int.Parse(_variablesList._variablesDictionary[name]._description["status"]._MoogParameter) == -1);
             foreach (string varName in _variablesList._variablesDictionary.Keys.Where(name => int.Parse(_variablesList._variablesDictionary[name]._description["status"]._MoogParameter) == -1))
             {
                 if (_buttonbasesDictionary[varName] is RadioButton)
@@ -2348,13 +2351,13 @@ namespace UniJoy
         {
             _buttonbasesDictionary = new Dictionary<string, ButtonBase>();
 
-            _buttonbasesDictionary.Add("AUTO_FIXATION", _checkBoxAutoFixation);
-            _buttonbasesDictionary.Add("CENTER_REWARD_SOUND", _checkBoxCenterRewardSound);
-            _buttonbasesDictionary.Add("SIDE_REWARD_SOUND", _checkboxSideRewardSound);
-            _buttonbasesDictionary.Add("AUTO_START", _checkBoxAutoStart);
-            _buttonbasesDictionary.Add("AUTO_CHOICE", _checkBoxAutoChoice);
-            _buttonbasesDictionary.Add("B.F_SOUND_ON", _checkBoxBreakFixationSoundEnable);
-            _buttonbasesDictionary.Add("SEC_RESP_CHANCE", _checkboxSecondResponseChance);
+            //_buttonbasesDictionary.Add("AUTO_FIXATION", _checkBoxAutoFixation);
+            //_buttonbasesDictionary.Add("CENTER_REWARD_SOUND", _checkBoxCenterRewardSound);
+            //_buttonbasesDictionary.Add("SIDE_REWARD_SOUND", _checkboxSideRewardSound);
+            //_buttonbasesDictionary.Add("AUTO_START", _checkBoxAutoStart);
+            //_buttonbasesDictionary.Add("AUTO_CHOICE", _checkBoxAutoChoice);
+            //_buttonbasesDictionary.Add("B.F_SOUND_ON", _checkBoxBreakFixationSoundEnable);
+            //_buttonbasesDictionary.Add("SEC_RESP_CHANCE", _checkboxSecondResponseChance);
             _buttonbasesDictionary.Add("GO_CUE_SOUND", _checkBoxEnableGoCue);
             _buttonbasesDictionary.Add("CORRECT_CUE_SOUND", _radiobuttonGoCueCorrectSide);
             _buttonbasesDictionary.Add("BOTH_SIDE_CUE_SOUND", _radiobuttonGoCueBothSide);
