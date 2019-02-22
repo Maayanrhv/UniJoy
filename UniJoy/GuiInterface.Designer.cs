@@ -389,7 +389,7 @@
             this._btnMoveRobotSide.TabIndex = 18;
             this._btnMoveRobotSide.Text = "Move Side";
             this._btnMoveRobotSide.UseVisualStyleBackColor = true;
-            this._btnMoveRobotSide.Click += new System.EventHandler(this._btnMoveRobotSide_Click);
+            //this._btnMoveRobotSide.Click += new System.EventHandler(this._btnMoveRobotSide_Click);
             // 
             // _btnEnagae
             // 

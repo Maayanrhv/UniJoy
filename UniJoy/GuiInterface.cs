@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,11 +16,37 @@ using VaryingValuesGenerators;
 
 namespace UniJoy
 {
+
     /// <summary>
     /// This partial is used for events callbacks.
     /// </summary>
     public partial class GuiInterface : Form
     {
+#if DEBUG
+                [DllImport(@"C:\Users\user\Desktop\MoogJoystick\MoogInterfeace\Debug\MoogInterfeace.dll")]
+                public static extern void Connect();
+                [DllImport(@"C:\Users\user\Desktop\MoogJoystick\MoogInterfeace\Debug\MoogInterfeace.dll")]
+                public static extern void Engage();
+                [DllImport(@"C:\Users\user\Desktop\MoogJoystick\MoogInterfeace\Debug\MoogInterfeace.dll")]
+                public static extern void Disengage();
+                [DllImport(@"C:\Users\user\Desktop\MoogJoystick\MoogInterfeace\Debug\MoogInterfeace.dll")]
+                public static extern void Disconnect();
+                [DllImport(@"C:\Users\user\Desktop\MoogJoystick\MoogInterfeace\Debug\MoogInterfeace.dll")]
+                public static extern void SendPosition(double surge, double heave, double lateral, double yaw, double roll, double pitch);
+#else
+
+        [DllImport(@"C:\Users\user\Desktop\MoogJoystick\MoogInterfeace\Release\MoogInterfeace.dll")]
+                public static extern void Connect();
+                [DllImport(@"C:\Users\user\Desktop\MoogJoystick\MoogInterfeace\Release\MoogInterfeace.dll")]
+                public static extern void Engage();
+                [DllImport(@"C:\Users\user\Desktop\MoogJoystick\MoogInterfeace\Release\MoogInterfeace.dll")]
+                public static extern void Disengage();
+                [DllImport(@"C:\Users\user\Desktop\MoogJoystick\MoogInterfeace\Release\MoogInterfeace.dll")]
+                public static extern void Disconnect();
+                [DllImport(@"C:\Users\user\Desktop\MoogJoystick\MoogInterfeace\Release\MoogInterfeace.dll")]
+                public static extern void SendPosition(double surge, double heave, double lateral, double yaw, double roll, double pitch);
+#endif
+
         #region MEMBERS
         /// <summary>
         /// The selected protocols path to view protocols.
@@ -83,7 +110,7 @@ namespace UniJoy
         /// The selected directions to give them hand REWARD (xxxxxyyy).
         /// The y-y-y is the indicators for the directions as followed by left-center-right.
         /// </summary>
-        private byte _selectedHandRewardDirections;
+        //private byte _selectedHandRewardDirections;
 
         /// <summary>
         /// Locker for starting and stopping button to be enabled not both.
@@ -100,7 +127,6 @@ namespace UniJoy
         /// </summary>
         private bool _isEngaged;
 
-        //TODO: adjast the code to work with Moog instead of the rat robot.
         /// <summary>
         /// Logger for writing log information.
         /// </summary>
@@ -132,9 +158,8 @@ namespace UniJoy
 
             try
             {
-                //TODO: connect to the Moog
-                //connect to the robot and turn on it's servos.
-                //_motocomController = new MotomanController("10.0.0.2", Properties.Settings.Default.Frequency, _logger);
+                //connect to the robot.
+                Connect();
             }
             catch
             {
@@ -150,7 +175,7 @@ namespace UniJoy
             _cntrlLoop = new ControlLoop(delegatsControlsTuple.Item2, delegatsControlsTuple.Item1, _logger);
 
             //reset the selected direction to be empty.
-            _selectedHandRewardDirections = 0;
+            //_selectedHandRewardDirections = 0;
 
             //allocate the start/stop buttom locker.
             _lockerStopStartButton = new object();
@@ -608,6 +633,7 @@ namespace UniJoy
             //turn off the robot servos.
             //avi-insert//
             //_motocomController.SetServoOff();
+            Disconnect();
 
             //TODO: Do I need this?
             //close the connection with the led strip.
@@ -735,21 +761,21 @@ namespace UniJoy
         /// </summary>
         /// <param name="sender">The combobox that has changed.</param>
         /// <param name="e">The args.</param>
-        private void _selectedRatNameComboBox_SelectedValueChanged(object sender, EventArgs e)
+        /*private void _selectedRatNameComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
             //change the selected rat name as followed by the combobox.
             if ((sender as ComboBox).SelectedItem != null)
                 _cntrlLoop.RatName = (sender as ComboBox).SelectedItem.ToString();
             else
                 _cntrlLoop.RatName = "";
-        }
+        }*/
 
         /// <summary>
         /// Function handler for changing the student name.
         /// </summary>
         /// <param name="sender">The combobox that has changed.</param>
         /// <param name="e">The args.</param>
-        private void _comboBoxStudentName_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void _comboBoxStudentName_SelectedIndexChanged(object sender, EventArgs e)
         {
             //chenge the selected student name as followed by the combobox.
             //change the selected rat name as followed by the combobox.
@@ -757,7 +783,7 @@ namespace UniJoy
                 _cntrlLoop.StudentName = (sender as ComboBox).SelectedItem.ToString();
             else
                 _cntrlLoop.StudentName = "";
-        }
+        }*/
         #endregion  
 
         #region EXPERIMENT_RUNNING_CHANGING_FUNCTION
@@ -796,8 +822,8 @@ namespace UniJoy
 
                             //start the control loop.
                             //need to be changed according to parameters added to which trajectoryname to be called from the excel file.
-                            //string trajectoryCreatorName = _variablesList._variablesDictionary["TRAJECTORY_CREATOR"]._description["parameters"]._ratHouseParameter[0];
-                            //int trajectoryCreatorNum = int.Parse(_variablesList._variablesDictionary["TRAJECTORY_CREATOR"]._description["parameters"]._ratHouseParameter);
+                            string trajectoryCreatorName = _variablesList._variablesDictionary["TRAJECTORY_CREATOR"]._description["parameters"]._MoogParameter[0].ToString();
+                            int trajectoryCreatorNum = int.Parse(_variablesList._variablesDictionary["TRAJECTORY_CREATOR"]._description["parameters"]._MoogParameter);
                             ITrajectoryCreator trajectoryCreator = DecideTrajectoryCreatorByProtocolName(_selectedProtocolName);
 
                             _cntrlLoop.NumOfRepetitions = int.Parse(_numOfRepetitionsTextBox.Text.ToString());
@@ -851,7 +877,7 @@ namespace UniJoy
         /// <param name="e">Args.</param>
         private void _makeTrials_Click(object sender, EventArgs e)
         {
-            //Check if both he num of staicases and withinstairs is 1 or 0.
+            //Check if both the num of staicases and withinstairs is 1 or 0.
             #region STATUS_NUM_OF_OCCURENCES
             int withinStairStstusOccurences = NumOfSpecificStatus("WithinStair");
             int acrossStairStatusOccurences = NumOfSpecificStatus("AcrossStair");
@@ -965,6 +991,7 @@ namespace UniJoy
             {
                 lock (_lockerPauseResumeButton)
                 {
+
                     #region DISABLE_BUTTONS
                     bool isBtnStartEnabled = _btnStart.Enabled;
                     bool isBtnStopEnabled = _btnStop.Enabled;
@@ -979,9 +1006,7 @@ namespace UniJoy
                     _btnMoveRobotSide.Enabled = false;
                     #endregion
 
-                    //TODO: do I need this?
-                    //set robot servo on and go homeposition.
-                    //_motocomController.SetServoOn();
+                    Disengage();
 
                     //TODO: What changes should be made here to work with Moog?
 
@@ -1003,8 +1028,7 @@ namespace UniJoy
                     {
                         MessageBox.Show(checkerParkPosition + "\n" + checkerEngagePosition, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-
-                    _motocomController.SetServoOff();*/
+                    */
 
                     #region ENABLE_BUTTONS_BACK
                     _btnStart.Enabled = isBtnStartEnabled;
@@ -1045,11 +1069,9 @@ namespace UniJoy
                     _btnMoveRobotSide.Enabled = false;
                     #endregion
 
-                    //TODO: What changes should be made here to work with Moog?
-                    /*try
+                    try
                     {
-                        //set robot servo on and go homeposition.
-                        _motocomController.SetServoOn();
+                        Engage();
                     }
                     catch
                     {
@@ -1057,7 +1079,7 @@ namespace UniJoy
                         return;
                     }
 
-                    string checkerParkPosition = CheckBothRobotsAtParkPosition(MotocomSettings.Default.DeltaParkToEngage);
+                    /*string checkerParkPosition = CheckBothRobotsAtParkPosition(MotocomSettings.Default.DeltaParkToEngage);
                     string checkerEngagePosition = CheckBothRobotAroundEngagePosition(MotocomSettings.Default.DeltaEngageToEngage);
 
                     if (checkerParkPosition.Equals(string.Empty) || checkerEngagePosition.Equals(string.Empty))
@@ -1086,56 +1108,6 @@ namespace UniJoy
                     #endregion
                 }
             }
-        }
-
-        /// <summary>
-        /// Moves the R1 robot aside.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _btnMoveRobotSide_Click(object sender, EventArgs e)
-        {
-            #region DISABLE_ENABLE_BUTTONS
-            _btnStart.Enabled = false;
-            _btnStop.Enabled = false;
-            _btnResume.Enabled = false;
-            _btnPause.Enabled = false;
-            _btnEnagae.Enabled = false;
-            _btnPark.Enabled = false;
-            _btnMoveRobotSide.Enabled = false;
-            #endregion DISABLE_ENABLE_BUTTONS
-
-            //TODO: What changes should be made here to work with Moog?
-            /*try
-            {
-                //set robot servo on and go homeposition.
-                _motocomController.SetServoOn();
-            }
-            catch
-            {
-                MessageBox.Show("Cannot set the servos on - check if robot is conncted in play mode and also not turned off", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            _motocomController.WriteASidePositionFile(); ;
-            _motocomController.MoveRobotASidePosition();
-
-            _motocomController.WaitJobFinished();
-
-            try
-            {
-                //set robot servo on and go homeposition.
-                _motocomController.SetServoOff();
-            }
-            catch
-            {
-                MessageBox.Show("Cannot set the servos off - check if robot is conncted in play mode and also not turned off", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }*/
-
-            #region DISABLE_ENABLE_BUTTONS
-            _btnPark.Enabled = true;
-            #endregion DISABLE_ENABLE_BUTTONS
         }
         #endregion
 
@@ -1319,6 +1291,7 @@ namespace UniJoy
             List<string> niceNameList = new List<string>();
             foreach (string varName in varyingCrossValsBoth.ElementAt(0).Keys)
             {
+                //TODO: Moog
                 string varNiceName = _variablesList._variablesDictionary[varName]._description["nice_name"]._MoogParameter;
                 niceNameList.Add(varNiceName);
             }
@@ -1355,7 +1328,7 @@ namespace UniJoy
         /// <summary>
         /// Creates a string to string inner dictionary inside of string to list of doubles.
         /// </summary>
-        /// <param name="MoogVaryingCrossVals">The crossVaryingValues of the both ratHouseParameter and landscapeHouseParameter.</param>
+        /// <param name="MoogVaryingCrossVals">The crossVaryingValues of the both MoogParameter and landscapeHouseParameter.</param>
         /// <returns>
         /// A list of dictionaries.
         /// Each item in the dictionary describes a raw of trial for the varying.
@@ -1452,6 +1425,7 @@ namespace UniJoy
             //add an input textbox with label show the name for each varying parameter.
             foreach (string varName in crossVaryingVals.ElementAt(0).Keys)
             {
+                //TODO: Moog
                 string varNiceName = _variablesList._variablesDictionary[varName]._description["nice_name"]._MoogParameter;
 
                 Label varyingAttributeLabel = new Label();
@@ -1628,6 +1602,7 @@ namespace UniJoy
             selectedIndex = StatusIndexByNameDecoder(cb.SelectedItem.ToString());
 
             //update the status in the variables dictionary.
+            //TODO: Moog
             _variablesList._variablesDictionary[varName]._description["status"]._MoogParameter = selectedIndex;
 
             //Check if both he num of staicases and withinstairs is 1 or 0.
@@ -1691,40 +1666,40 @@ namespace UniJoy
         /// </summary>
         /// <param name="sender">The button.</param>
         /// <param name="e">Args.</param>
-        private void _digitalHandRewardButton_Click(object sender, EventArgs e)
+        /*private void _digitalHandRewardButton_Click(object sender, EventArgs e)
         {
             Task.Run(() =>
             {
                 _cntrlLoop.GiveRewardHandReward(_selectedHandRewardDirections, false);
             });
-        }
+        }*/
 
         /// <summary>
         /// Handler for the continious hand reward releasing (when release the button - should stop the selected reward due to the clicked).
         /// </summary>
         /// <param name="sender">The button.</param>
         /// <param name="e">Args.</param>
-        private void _continiousHandRewardKeyReleaed(object sender, MouseEventArgs e)
+        /*private void _continiousHandRewardKeyReleaed(object sender, MouseEventArgs e)
         {
             _cntrlLoop.GiveRewardHandReward(0, true);
-        }
+        }*/
 
         /// <summary>
         /// Handler for the continious hand reward clicking (when release the button - should stop the given reward due to the clicked that opened the selected REWARD).
         /// </summary>
         /// <param name="sender">The buutton.</param>
         /// <param name="e">Args.</param>
-        private void _countiniousHandRewardKeyDown(object sender, MouseEventArgs e)
+        /*private void _countiniousHandRewardKeyDown(object sender, MouseEventArgs e)
         {
             _cntrlLoop.GiveRewardHandReward(_selectedHandRewardDirections, true);
-        }
+        }*/
 
         /// <summary>
         /// Handler for changing the state of the left reward direction.
         /// </summary>
         /// <param name="sender">The checbox.</param>
         /// <param name="e">Args.</param>
-        private void _leftHandRewardCheckBox_CheckedChanged(object sender, EventArgs e)
+        /*private void _leftHandRewardCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox leftCheckBox = sender as CheckBox;
 
@@ -1739,14 +1714,14 @@ namespace UniJoy
                 //& operator with 0000_0100
                 _selectedHandRewardDirections &= 4;
             }
-        }
+        }*/
 
         /// <summary>
         /// Handler for changing the state of the center reward direction.
         /// </summary>
         /// <param name="sender">The checkbox.</param>
         /// <param name="e">Args.</param>
-        private void _centerHandRewardCheckBox_CheckedChanged(object sender, EventArgs e)
+        /*private void _centerHandRewardCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox centerheckBox = sender as CheckBox;
 
@@ -1761,14 +1736,14 @@ namespace UniJoy
                 //& operator with 0000_0101
                 _selectedHandRewardDirections &= 5;
             }
-        }
+        }*/
 
         /// <summary>
         /// Handler for changing the state of the right reward direction.
         /// </summary>
         /// <param name="sender">The checkbox.</param>
         /// <param name="e">Args.</param>
-        private void _rightHandRewardCheckBox_CheckedChanged(object sender, EventArgs e)
+        /*private void _rightHandRewardCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox rightCheckBox = sender as CheckBox;
 
@@ -1784,7 +1759,7 @@ namespace UniJoy
                 _selectedHandRewardDirections &= 3;
             }
 
-        }
+        }*/
         #endregion HAND_REWARD_CONTROLL_FUNCTION
 
         #region AUTOS
@@ -2005,6 +1980,7 @@ namespace UniJoy
                 {
                     _dynamicAllocatedTextBoxes[checkboxRightName + "parameters"].Enabled = false;
                     _dynamicAllocatedTextBoxes[checkboxRightName + "parameters"].Text = _dynamicAllocatedTextBoxes[cehckBoxLeftName + "parameters"].Text;
+                    //TODO: Moog
                     _variablesList._variablesDictionary[checkboxRightName]._description["parameters"]._MoogParameter = _variablesList._variablesDictionary[cehckBoxLeftName]._description["parameters"]._MoogParameter;
                 }
                 else
@@ -2035,6 +2011,7 @@ namespace UniJoy
             AddVariablesLabelsTitles(ref top, left, width, height, eachDistance);
 
             //filter only the variables where the status is not -1 (not for the checkboxes for the gui).
+            //TODO: Moog
             foreach (string varName in _variablesList._variablesDictionary.Keys.Where(name => int.Parse(_variablesList._variablesDictionary[name]._description["status"]._MoogParameter) != -1))
             {
                 ShowVariableLabel(_variablesList._variablesDictionary[varName]._description["nice_name"]._MoogParameter,
@@ -2074,8 +2051,9 @@ namespace UniJoy
             }
 
             //filter only the variables where the status is  -1 (for the checkboxes for the gui).
-            IEnumerable<string> myList = _variablesList._variablesDictionary.Keys.Where(name => int.Parse(_variablesList._variablesDictionary[name]._description["status"]._MoogParameter) == -1);
-            foreach (string varName in _variablesList._variablesDictionary.Keys.Where(name => int.Parse(_variablesList._variablesDictionary[name]._description["status"]._MoogParameter) == -1))
+            //TODO: Moog
+            IEnumerable<string> variablesList = _variablesList._variablesDictionary.Keys.Where(name => int.Parse(_variablesList._variablesDictionary[name]._description["status"]._MoogParameter) == -1);
+            foreach (string varName in variablesList)
             {
                 if (_buttonbasesDictionary[varName] is RadioButton)
                 {
@@ -2168,6 +2146,7 @@ namespace UniJoy
             statusCombo.SelectedIndexChanged += new EventHandler((sender, args) => statusCombo_SelectedIndexChanged(sender, args, varName));
 
             //decide which items on the ComboBox is selected according to the data in the excel sheet.
+            //TODO: Moog
             switch (_variablesList._variablesDictionary[varName]._description["status"]._MoogParameter)
             {
                 case "0":
@@ -2220,7 +2199,8 @@ namespace UniJoy
             //freezing the textbox according to the status
             FreezeTextBoxAccordingToStatus(incrementTextBox, varName, false);
 
-            //show the _ratHouseParameter.
+            //show the _MoogParameter.
+            //TODO: Moog
             string lowBoundTextVal = string.Join(",", _variablesList._variablesDictionary[varName]._description["increament"]._MoogParameter);
             incrementTextBox.Text = lowBoundTextVal;
 
@@ -2245,7 +2225,8 @@ namespace UniJoy
             //freezing the textbox according to the status
             FreezeTextBoxAccordingToStatus(highBoundTextBox, varName, false);
 
-            //show the _ratHouseParameter.
+            //show the _MoogParameter.
+            //TODO: Moog
             string highBoundTextVal = string.Join(",", _variablesList._variablesDictionary[varName]._description["high_bound"]._MoogParameter);
             highBoundTextBox.Text = highBoundTextVal;
 
@@ -2270,7 +2251,8 @@ namespace UniJoy
             //freezing the textbox according to the status
             FreezeTextBoxAccordingToStatus(lowBoundTextBox, varName, false);
 
-            //show the _ratHouseParameter.
+            //show the _MoogParameter.
+            //TODO: Moog
             lowBoundTextVal = string.Join(",", _variablesList._variablesDictionary[varName]._description["low_bound"]._MoogParameter);
             lowBoundTextBox.Text = lowBoundTextVal;
 
@@ -2291,12 +2273,13 @@ namespace UniJoy
 
 
             //print the parameter in the gui according to the representation of each status.
+            //TODO: Moog
             switch (_variablesList._variablesDictionary[varName]._description["status"]._MoogParameter)
             {
                 case "0":   //const
                 case "1":   //static
                 case "6":   //vector
-                    //show the _ratHouseParameter.
+                    //show the _MoogParameter.
                     parametersTextBox.Text = string.Join(",", _variablesList._variablesDictionary[varName]._description["parameters"]._MoogParameter); ;
                     break;
 
@@ -2304,7 +2287,7 @@ namespace UniJoy
                 case "3":   //acrossstair
                 case "4":   //withinstair
                 case "5":
-                    //show the _ratHouseParameter.
+                    //show the _MoogParameter.
                     string lowboundTextVal = string.Join(",", _variablesList._variablesDictionary[varName]._description["low_bound"]._MoogParameter);
                     string highboundTextVal = string.Join(",", _variablesList._variablesDictionary[varName]._description["high_bound"]._MoogParameter);
                     string increasingTextVal = string.Join(",", _variablesList._variablesDictionary[varName]._description["increament"]._MoogParameter);
@@ -2515,6 +2498,7 @@ namespace UniJoy
         private void FreezeTextBoxAccordingToStatus(TextBox textBox, string varName, bool parametersTextbox)
         {
             //if const disabled textbox and break no matter what.
+            //TODO: Moog
             if (_variablesList._variablesDictionary[varName]._description["status"]._MoogParameter == "0")
             {
                 textBox.Enabled = false;
@@ -2522,6 +2506,7 @@ namespace UniJoy
             }
 
             //decide which items on the ComboBox is selected according to the data in the excel sheet.
+            //TODO: Moog
             switch (_variablesList._variablesDictionary[varName]._description["status"]._MoogParameter)
             {
                 case "1":
@@ -2560,6 +2545,7 @@ namespace UniJoy
             par._MoogParameter = attributeValue;
 
             //if the input can be only a scalar
+            //TODO: Moog
             if (_variablesList._variablesDictionary[varName]._description["status"]._MoogParameter != "6")
             {
                 //if the input for one value contains more than one dot for precison dot or chars that are not digits.
@@ -2605,6 +2591,7 @@ namespace UniJoy
         private bool CheckVaryingListBoxProperInput(Dictionary<string, string> toCheckVector)
         {
             //check if each attribute is according to both parameters if needed and the brackets also.
+            //TODO: Moog
             foreach (string varName in toCheckVector.Keys)
             {
                 int firstLeftBracketIndex = toCheckVector[varName].IndexOf('[');
@@ -2718,6 +2705,7 @@ namespace UniJoy
         /// <returns>The num of statusVal in the variable list.</returns>
         private int NumOfSpecificStatus(string statusVal)
         {
+            //TODO: Moog
             statusVal = StatusIndexByNameDecoder(statusVal);
             return _variablesList._variablesDictionary.Count(variable =>
                 _variablesList._variablesDictionary[variable.Key]._description["status"]._MoogParameter == statusVal);
@@ -2761,12 +2749,13 @@ namespace UniJoy
             TextBox parametersTextBox = _dynamicAllocatedTextBoxes[varName + "parameters"] as TextBox;
 
             //print the parameter in the gui according to the representation of each status.
+            //TODO: Moog
             switch (_variablesList._variablesDictionary[varName]._description["status"]._MoogParameter)
             {
                 case "0":   //const
                 case "1":   //static
                 case "6":
-                    //show the _ratHouseParameter.
+                    //show the _MoogParameter.
                     string parametersTextVal = string.Join(",", _variablesList._variablesDictionary[varName]._description["parameters"]._MoogParameter);
                     parametersTextBox.Text = parametersTextVal;
                     break;
@@ -2775,7 +2764,7 @@ namespace UniJoy
                 case "3":   //acrossstair
                 case "4":   //withinstair
                 case "5":   //ramdom
-                    //show the _ratHouseParameter.
+                    //show the _MoogParameter.
                     string lowboundTextVal = string.Join(",", _variablesList._variablesDictionary[varName]._description["low_bound"]._MoogParameter);
                     string highboundTextVal = string.Join(",", _variablesList._variablesDictionary[varName]._description["high_bound"]._MoogParameter);
                     string increasingTextVal = string.Join(",", _variablesList._variablesDictionary[varName]._description["increament"]._MoogParameter);

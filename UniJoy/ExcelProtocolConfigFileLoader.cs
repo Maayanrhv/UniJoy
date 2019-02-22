@@ -16,7 +16,7 @@ namespace UniJoy
     /// <summary>
     /// This class is used to read the data from excel protocl file and load it into the GuiInterface.
     /// The excel file may contain two sheets of parameters (for the trial) and of functions 
-    /// (for the calling functions to analze response, trajectory creation, etc).
+    /// (for the calling functions to analyze response, trajectory creation, etc).
     /// </summary>
     public class ExcelProtocolConfigFileLoader
     {
@@ -51,7 +51,6 @@ namespace UniJoy
             Excel.Workbook xlWorkbook = _xlApp.Workbooks.Open(protocolFilePath);
 
             Excel._Worksheet xlWorksheet;
-            //TODO : take care when there is no such sheet.
             try
             {
                 xlWorksheet = xlWorkbook.Sheets["variables"];
@@ -69,9 +68,8 @@ namespace UniJoy
 
             string[,] excelStringValuesArray = Convert2DObjectsTo2DStrings(valueArray);
 
-            //vars going to collect all the variables in the excel data with thier attributes as dictionary of a 
-            //vraible name and all it's attribute in inner dictionary.
-            //Variables vars = new Variables();
+            //vars going to collect all the variables in the excel data with their attributes as dictionary of a 
+            //vraible name and all it's attributes in inner dictionary.
             variables._variablesDictionary = new Dictionary<string, Variable>();
 
             //collecting all the attributes for each variable (all variables have them).
@@ -88,7 +86,7 @@ namespace UniJoy
                 Variable var = new Variable();
                 var._description = new Dictionary<string, Param>();
 
-                //run along the number of columns along the lines to collect the attributes of the specific variable..
+                //run along the number of columns along the lines to collect the attributes of the specific variable.
                 for (int i = 0; i < excelStringValuesArray.GetLength(1); i++)
                 {
                     Param param = new Param();
@@ -104,7 +102,7 @@ namespace UniJoy
                     }
                     catch
                     {
-                        MessageBox.Show("The attribute named " + attributes[i] + " is showing tiice in the columns.",
+                        MessageBox.Show("The attribute named " + attributes[i] + " is showing twice in the columns.",
                             "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
@@ -112,7 +110,7 @@ namespace UniJoy
 
                 try
                 {
-                    //adding the variable (line in the excel data file into the dictionary of variables 
+                    //adding the variable (line in the excel data file) into the dictionary of variables 
                     //with the variable name as the key.
                     variables._variablesDictionary.Add(var._description["name"]._MoogParameter, var);
                 }
@@ -142,7 +140,7 @@ namespace UniJoy
             //change the sheet name to variables.
             workSheet.Name = "variables";
 
-            //add the first line of heades titles to each column
+            //add the first line of heads titles to each column
             int columnIndex = 1;
             foreach (string title in variables._variablesDictionary.ElementAt(0).Value._description.Keys)
             {
@@ -166,7 +164,7 @@ namespace UniJoy
                     {
                         //write the column to the variable
                         workSheet.Cells[rowIndex, columnIndex] = item.Value._description[titleName]._MoogParameter;
-                        //go next column for the same variable.
+                        //go to next column for the same variable.
                         columnIndex++;
                     }
                 }
@@ -203,15 +201,15 @@ namespace UniJoy
                             workSheet.Cells[rowIndex, columnIndex] = "0";
                         }
 
-                        //go next column for the same variable.
+                        //go to next column for the same variable.
                         columnIndex++;
                     }
                 }
-                //go next line (for next variable)
+                //go to next line (for next variable)
                 rowIndex++;
             }
 
-            //add all checkboxes that not in the excel file from the beggining.
+            //add all checkboxes that are not in the excel file from the beggining.
             foreach (var item in checkboxesDictionary)
             {
                 //reset the column index for the new line.
@@ -248,16 +246,16 @@ namespace UniJoy
                             workSheet.Cells[rowIndex, columnIndex] = "0";
                         }
 
-                        //go next column for the same variable.
+                        //go to next column for the same variable.
                         columnIndex++;
                     }
 
-                    //go next line (for next variable)
+                    //go to next line (for next variable)
                     rowIndex++;
                 }
             }
 
-            try//it is for the event when the file with the same name exists and the user cnceked the saving.
+            try//it is for the event when the file with the same name exists and the user checked the saving.
             {
                 //save the file and close it.
                 newProtocolFile.SaveAs(protocolFilePath + ".xlsx");
@@ -287,7 +285,7 @@ namespace UniJoy
         }
 
         /// <summary>
-        /// Dissasembly data attribute to it's components(if it's a vector attribute for both the _ratHouseParameter and _landscapeParameters) for a Param class.
+        /// Dissasembly data attribute to its components (if it's a vector attribute for both the _MoogParameter and _landscapeParameters) for a Param class.
         /// </summary>
         /// <param name="attributeValue">The attribute value of the excel cell to be dissasembly.</param>
         /// <returns>The param disassemblied object acordding to the value.</returns>

@@ -29,7 +29,7 @@ namespace Params
         }
 
         /// <summary>
-        /// The rat house parameter values for one attribute of one variable.
+        /// The Moog parameter values for one attribute of one variable.
         /// </summary>
         public string _MoogParameter
         {

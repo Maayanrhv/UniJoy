@@ -583,18 +583,6 @@ namespace UniJoy
         {
             _logger.Info("Main ControlLoop begin.");
 
-            //TODO: Do I need this?
-            //set robot servo on and go homeposition.
-            /*try
-            {
-                _motomanController.SetServoOn();
-            }
-            catch
-            {
-                MessageBox.Show("Cannot set the servos on - check if robot is conncted in play mode and also not turned off", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }*/
-
             for (; _repetitionIndex < NumOfRepetitions / NumOfStickOn;)
             {
                 //while all trial are not executed or not come with response stage.
@@ -1416,6 +1404,15 @@ namespace UniJoy
             _logger.Info("Send Executing robot trajectory data start command");
             _robotMotionTask.Start();
 
+            /*Task.Run(() =>
+            {
+                for ()
+                {
+                    SendTrajecoty(position);
+                    Position++;
+                }
+            });*/
+
             //write alpha omega that the stimulus start.
             Task.Run(() =>
             {
@@ -1433,6 +1430,15 @@ namespace UniJoy
                 {
                     ExecuteLedControllersCommand();
                 });
+
+                /*Task.Run(() =>
+                {
+                    for ()
+                    {
+                        SendOculusFrame();
+                        Position++;
+                    }
+                );*/
             }
 
             //also run the rat center head checking in parallel to the movement time.
@@ -1924,6 +1930,7 @@ namespace UniJoy
             _logger.Info("Sending trajectories data to robots end.");
         }
 
+        //TODO: Maayan - determine whether the subject answer was correct
         /// <summary>
         /// Determine the current trial correct side.
         /// </summary>
